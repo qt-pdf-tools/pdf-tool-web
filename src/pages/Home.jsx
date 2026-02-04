@@ -21,12 +21,6 @@ const tools = [
     color: "green",
   },
   {
-    title: "Xóa trang PDF",
-    desc: "Xóa trang không mong muốn",
-    path: "/delete-pages",
-    color: "purple",
-  },
-  {
     title: "XML sang PDF",
     desc: "Chuyển đổi XML sang PDF",
     path: "/xml-to-pdf",
