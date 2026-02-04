@@ -37,10 +37,12 @@ export default function Preview() {
     const fetchFileSize = async () => {
       try {
         const res = await fetch(downloadSrc, {
-          method: "HEAD",
+          method: "GET",
         });
+        console.log("res:", res);
   
         const size = res.headers.get("content-length");
+
 
         console.log("File size in bytes:", size);
   
