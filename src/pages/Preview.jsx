@@ -21,38 +21,38 @@ export default function Preview() {
   const [loading, setLoading] = useState(true);
 
  const [fileSize, setFileSize] = useState("");
-
-useEffect(() => {
-  const fetchFileSize = async () => {
-    try {
-      const res = await fetch(downloadSrc, {
-        method: "HEAD",
-      });
-
-      const size = res.headers.get("content-length");
-
-      if (size) {
-        const mb = (size / 1024 / 1024).toFixed(2);
-        setFileSize(`${mb} MB`);
-      }
-    } catch (err) {
-      console.log("Không lấy được dung lượng file");
-    }
-  };
-
-  fetchFileSize();
-}, [downloadSrc]);
-
-  useEffect(() => {
-    if (!tool || !fileId) {
-      navigate("/");
+ 
+ useEffect(() => {
+   if (!tool || !fileId) {
+     navigate("/");
     }
   }, [tool, fileId, navigate]);
-
+  
   if (!tool || !fileId) return null;
-
+  
   const previewSrc = `${API_URL}/${tool}/preview/${fileId}`;
   const downloadSrc = `${API_URL}/${tool}/download/${fileId}`;
+  
+  useEffect(() => {
+    const fetchFileSize = async () => {
+      try {
+        const res = await fetch(downloadSrc, {
+          method: "HEAD",
+        });
+  
+        const size = res.headers.get("content-length");
+  
+        if (size) {
+          const mb = (size / 1024 / 1024).toFixed(2);
+          setFileSize(`${mb} MB`);
+        }
+      } catch (err) {
+        console.log("Không lấy được dung lượng file");
+      }
+    };
+  
+    fetchFileSize();
+  }, [downloadSrc]);
 
   const expireMinutes = 5;
 
@@ -104,7 +104,7 @@ useEffect(() => {
             <div className="space-y-3 text-sm text-gray-600">
               <p>
                 <span className="font-medium">Dung lượng file:</span>{" "}
-                <span className="break-all">{fileSize} MB</span>
+                <span className="break-all">{fileSize}</span>
               </p>
 
               <p className="text-red-600">
