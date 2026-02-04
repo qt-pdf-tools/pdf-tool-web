@@ -41,6 +41,8 @@ export default function Preview() {
         });
   
         const size = res.headers.get("content-length");
+
+        console.log("File size in bytes:", size);
   
         if (size) {
           const mb = (size / 1024 / 1024).toFixed(2);
