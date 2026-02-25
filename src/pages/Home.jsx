@@ -21,9 +21,9 @@ const tools = [
     color: "green",
   },
   {
-    title: "XML sang PDF",
-    desc: "Chuyển đổi XML sang PDF",
-    path: "/xml-to-pdf",
+    title: "RAR Sang ZIP",
+    desc: "Chuyển đổi RAR sang ZIP",
+    path: "/rar-to-zip",
     color: "yellow",
   },
 ];
