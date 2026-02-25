@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const tools = [
   {
@@ -46,11 +47,10 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-4 mt-16">
         <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">
-          Tất cả các công cụ PDF bạn cần trong một nơi
+          Tất cả các công cụ bạn cần để làm việc với PDF đều có ở đây.
         </h1>
-
         <p className="text-gray-500 text-center mb-12">
-          Sử dụng các công cụ PDF miễn phí để nén, gộp, cắt và chuyển đổi PDF dễ dàng.
+          Tất cả các công cụ bạn cần để xử lý PDF đều nằm trong tầm tay bạn. Tất cả đều MIỄN PHÍ 100% và dễ sử dụng! Ghép, tách, nén, chuyển đổi, xoay, mở khóa và thêm hình mờ vào PDF chỉ với vài cú nhấp chuột.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -78,6 +78,8 @@ export default function Home() {
           ))}
         </div>
       </main>
+       
+      <Footer />
     </div>
   );
 }

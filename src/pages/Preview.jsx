@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -144,6 +145,8 @@ export default function Preview() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
