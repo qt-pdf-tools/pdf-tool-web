@@ -140,11 +140,14 @@ export default function Split() {
                 Chọn file PDF để cắt
               </div>
             </label>
+             <p className="text-xs text-gray-400 mt-6">
+          File sẽ tự động bị xóa khỏi máy chủ sau 5 phút.
+        </p>
           </div>
         )}
 
 
-        
+       
       </main>
       )}
         {/* Preview + Page Select */}
